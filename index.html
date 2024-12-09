@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <!-- head start -->
+<head>
+  <title>Card Display</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script src="./assets/json/products.json"></script>
+  <script src="./assets/js/product.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="assets/css/products.css" rel="stylesheet" type="text/css"/>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<!-- head end -->
+
+<!-- Body start -->
+<body  onload="getting('Available')" id="body">
+  <div class="container-fluid h5 bg-danger  text-light text-center p-2">BEST OFFERS</div>
+<!--  Navbar Start -->
+    <ul class="nav nav-tabs nav-pills border-0">
+        <li class="nav-item">
+          <button  type="button" class="btn text-dark  fw-bold  ms-3"  id="Available" onclick="getting('Available')">
+            Available
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn  fw-bold text-dark Upcoming ms-1" id="Upcoming" type="button" onclick="getting('Upcoming')" >Upcoming</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn  fw-bold  text-dark Missed  ms-1" id="Missed" onclick="getting('Missed') "type="button" >Missed</button>
+        </li>
+    </ul>
+    <!-- Navbar end -->
+
+    <!-- slider start -->
+  <div class="container">
+    <h1 class="text-center text-dark m-3" id="heading">Availabe items</h1>
+    <div class="swiper-container card_slider">
+      <div class="swiper-wrapper " id="cards-container">
+      </div>
+      <div class="swiper-button-prev text-dark"></div>
+      <div class="swiper-button-next text-dark"></div>
+    </div>
+  </div>
+  <!-- slider end -->
+
+  <script>
+    function changeSwiper() 
+    {
+      var swiper = new Swiper(".card_slider", {
+        slidesPerView: 5,
+        spaceBetween: 10,
+      
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        
+      breakpoints: {
+        319: {
+          slidesPerView: 1,
+          spaceBetween:10,
+        },
+
+        768: {
+          slidesPerView: 3,
+          spaceBetween:20,
+        },
+
+        1024: {
+          slidesPerView: 4,
+          spaceBetween:20,
+        },
+
+        1200: {
+          slidesPerView: 5,
+          spaceBetween: 10,
+        },
+
+        },
+      });
+    }
+    changeSwiper();
+  </script>
+  
+</body>
+</html>
+<!-- Body end -->

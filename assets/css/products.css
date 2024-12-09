@@ -1,0 +1,46 @@
+.swiper-container {
+    overflow: hidden; 
+  }
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  }
+
+  .card {
+    height: 100%;
+  }
+
+.card img{
+  height:100%;
+  object-fit: cover;
+  }
+
+.checked {
+  color: gold;
+}
+@media screen and (min-width: 320px){
+  .swiper-button-prev{
+    margin-top: 50%;
+  }
+  .swiper-button-next{
+    margin-top: 50%;
+  }
+}
+
+@media screen and (width: 768px){
+  .swiper-button-prev{
+    margin-top: 20%;
+  }
+  .swiper-button-next{
+    margin-top: 20%;
+  }
+}
+@media screen and (min-width: 1024px){
+  .swiper-button-prev{
+    margin-top: 5%;
+  }
+  .swiper-button-next{
+    margin-top: 5%;
+  }
+}
